@@ -1,25 +1,54 @@
+import { IoCartOutline } from "react-icons/io5";
+import { VscAccount } from "react-icons/vsc";
+import {IconButton} from '@mui/material';
+import { InputBase } from "@mui/material";
+import { Paper } from '@mui/material';
+import { CiSearch } from 'react-icons/ci';
+import { Divider } from '@mui/material';
+
 export function NavBar(){
     return(
         <>
-        <div className="bg-[#0F2246] px-4 h-20 w-full flex items-center justify-between border-b-2 border-white">
+        <div className="bg-[#CCCCCC] px-4 h-16 w-full flex items-center space-x-52 shadow-sm mr-6">
                 
-                <div>
-                    <img src="././public/brandShoesA.jpg" className="ml-5 rounded-full h-12 w-12 hover:scale-115 transition-transform" alt="logo.png"/>
-                </div>
-
-                <div className="flex w-fit">
-                    <input type="text" id="searchInput" placeholder="Digite aqui o que procura..." className="bg-white text-[#1C1C1C] w-lg px-6 h-9 rounded-l-4xl focus:outline-none" />
-                    <button type="submit" id="searchBtn" className="bg-white h-9 px-4 rounded-r-4xl border-l border-gray-300 cursor-pointer">
-                        <img src="././search_16dp_999999_FILL1_wght400_GRAD0_opsz20.svg" alt="Buscar" className="h-full"/>
-                    </button>
-                </div>
-
-                <div className="flex gap-6 py-2 mr-8">
-                    <a href="/carrinho">
-                        <img src="././public/shopping_cart_35dp_FFFFFF_FILL1_wght400_GRAD0_opsz40.svg" className="cursor-pointer hover:scale-115 transition-transform" alt="meuCarrinho" />
+                <div className="flex items-center gap-4">
+                    <a
+                    href="/"
+                    className="flex items-center gap-2 px-4 py-2 text-[#0F2246] font-bold rounded-md"
+                    >
+                        <img
+                        src="/brandShoesA.jpg"
+                        className="h-12 w-12 rounded-full object-cover"
+                        alt="Logo da loja"
+                        />  
+                        BOUNDLES SHOES
                     </a>
+                </div>
+
+                <div>
+                    <Paper
+                    component="form"
+                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+                    >
+                        <InputBase
+                            sx={{ ml: 1, flex: 1 }}
+                            placeholder="Digite algum produto"
+                            inputProps={{ 'aria-label': 'Digite algum produto' }}
+                        />
+                        <Divider sx={{ height: 26, m: 0.5 }} orientation="vertical" />
+                        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                            <CiSearch />
+                        </IconButton>
+                    </Paper>
+                </div>
+
+                <div className="flex items-center gap-6 ml-40">
+                    <a href="/carrinho">
+                        <IoCartOutline className="text-[#0F2246] text-[2rem]"/>
+                    </a>
+                    <Divider sx={{ height: 26, m: 0 }} orientation="vertical" />
                     <a href="/user">
-                        <img src="././public/person_35dp_FFFFFF_FILL1_wght400_GRAD0_opsz40.svg" className="cursor-pointer hover:scale-115 transition-transform" alt="meuPerfil" />
+                        <VscAccount className="text-[#0F2246] text-[2rem]"/>
                     </a>
                 </div>
 
