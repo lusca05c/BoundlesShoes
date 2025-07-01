@@ -7,6 +7,10 @@ export function Router(){
 
         <Routes>
             <Route path="/" element={<Pages.Home/>}/>
+            <Route path="/login" element={<Pages.Login/>}/>
+            <Route path="/user-perfil" element={<Pages.UserPerfil/>}/>
+            <Route path="/user-cadastro" element={<Pages.UserCadastro/>}/>
+            <Route path="/recadastro-senha" element={<Pages.PasswordRecadastro/>}/>
         </Routes>
 
     );
