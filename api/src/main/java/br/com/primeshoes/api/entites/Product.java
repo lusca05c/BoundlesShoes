@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -41,10 +42,14 @@ public class Product {
 	@ManyToOne
     @JoinColumn(name = "brands_id")
 	private Brand brand;
+
+	@OneToOne
+	@JoinColumn(name = "images_id")
+	private Image image;
 	
 	public Product () { }
 	
-	public Product(long id, String name, String description, float price, User user, Instant created_at, Instant updated_at, float raitingA, Category category, Brand brand) {
+	public Product(long id, String name, String description, float price, User user, Image image, Instant created_at, Instant updated_at, float raitingA, Category category, Brand brand) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -55,6 +60,7 @@ public class Product {
 		this.updated_at = updated_at;
 		this.category = category;
 		this.brand = brand;
+		this.image = image;
 	}
 	
 	public String getName() {
@@ -121,5 +127,13 @@ public class Product {
 
 	public void setBrand(Brand brand) {
 		this.brand = brand;
+	}
+
+	public Image getImage(){
+		return image;
+	}
+
+	public void setImage(Image image){
+		this.image = image;
 	}
 }
