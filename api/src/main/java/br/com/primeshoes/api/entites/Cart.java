@@ -20,4 +20,28 @@ public class Cart {
     @JoinColumn(name = "users_id")
 	private User user;
 
+	public Cart() {
+
+	}
+
+	public Cart(User user){
+		this.user = user;
+	}
+
+	public long getId(){
+		return id;
+	}
+
+	public void setId(long id){
+		this.id = id;
+	}
+
+	public User getUser(){
+		return user;
+	}
+
+	public void setUser(User user){
+		this.user = user;
+	}
+
 }
