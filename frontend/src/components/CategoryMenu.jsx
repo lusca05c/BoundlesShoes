@@ -19,7 +19,7 @@ export function CategoryMenu(){
 
     return(
         <>
-            <div className="bg-[#0F2246] h-14 w-full flex items-center px-8 gap-26 text-white text-sm font-medium sticky top-0">
+            <div className="bg-[#0F2246] h-14 w-full flex items-center px-8 gap-26 text-white text-sm font-medium  z-40">
                 
                 <div className="relative h-full">
                     <button 
@@ -50,19 +50,17 @@ export function CategoryMenu(){
                     <div className="relative h-full">
                         <button 
                         onClick={toggleFilter}
-                        className="h-full flex items-center gap-2 px-6 py-2 hover:bg-orange-600 transition cursor-pointer" 
+                        className="h-full flex items-center gap-2 px-6 py-2 hover:bg-[#1A3464] transition cursor-pointer" 
                         >
                             <MdFilterList className="text-lg" />
                             Filtrar
                         </button>
 
-                        <div className={`absolute left-0 mt-0 w-[7.12rem] bg-white rounded-b-md text-[#0F2246] z-50 py-2 transition ${
+                        <div className={`absolute left-0 mt-0 w-[7.12rem] bg-[#0F2246] rounded-b-md text-white z-50 py-2 transition ${
                             isFilterOPen ? "" : "hidden"
                             }`}>
-                                <a href="" className="block px-4 py-2 hover:bg-orange-600">Menor Preço</a>
-                                <a href="" className="block px-4 py-2 hover:bg-orange-600">Melhor Avaliado</a>
-                                <a href="" className="block px-4 py-2 hover:bg-orange-600">Maior Preço</a>
-                                <a href="" className="block px-4 py-2 hover:bg-orange-600">Pior Avaliado</a>
+                                <a href="" className="block px-4 py-2 hover:bg-[#1A3464]">Menor Preço</a>
+                                <a href="" className="block px-4 py-2 hover:bg-[#1A3464]">Maior Preço</a>
                         </div>
 
                     </div>
@@ -73,7 +71,7 @@ export function CategoryMenu(){
 
                     <a
                     href="/"
-                    className="h-full flex items-center gap-2 px-6 py-2 hover:bg-orange-600"
+                    className="h-full flex items-center gap-2 px-6 py-2 hover:bg-[#1A3464]"
                     >
                         <IoHomeOutline className="text-lg"/>
                         Home
