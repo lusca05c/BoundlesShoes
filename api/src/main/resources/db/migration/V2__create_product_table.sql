@@ -5,7 +5,13 @@ CREATE TABLE products(
 		price DECIMAL(15,2) DEFAULT 0 NOT NULL,
 		ratingA DECIMAL(2,1) DEFAULT 0.0 NOT NULL,
 		users_id BIGINT,
-		created_at TIMESTAMP,
-		updated_at TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-		FOREIGN KEY(users_id) REFERENCES users(id) ON DELETE CASCADE
+		category_id BIGINT,
+		brands_id BIGINT,
+		images_id BIGINT,
+		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+		updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+		FOREIGN KEY(users_id) REFERENCES users(id) ON DELETE CASCADE,
+		FOREIGN KEY (category_id) REFERENCES category(id),
+		FOREIGN KEY (brands_id) REFERENCES brand(id),
+		FOREIGN KEY (images_id) REFERENCES image(id)
 );
