@@ -11,7 +11,7 @@ CREATE TABLE products(
 		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 		updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 		FOREIGN KEY(users_id) REFERENCES users(id) ON DELETE CASCADE,
-		FOREIGN KEY (category_id) REFERENCES category(id),
-		FOREIGN KEY (brands_id) REFERENCES brand(id),
-		FOREIGN KEY (images_id) REFERENCES image(id)
+		FOREIGN KEY (category_id) REFERENCES categories(id),
+		FOREIGN KEY (brands_id) REFERENCES brands(id),
+		FOREIGN KEY (images_id) REFERENCES images(id)
 );
